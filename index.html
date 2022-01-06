@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자판기</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean"
+    rel="stylesheet" />
+  <link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">console.log("ddd")</script>
+ <script>
+    </script>
+
+<body>
+ 
+  <div class="container">
+    <div class="head_part">
+      <h1>앨범 자판기</h1>
+    </div>
+    <div class="display_part">
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="swiper-wrapper">        
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="entrance_part">
+      <div class="entrance">
+        <h2>투입 금액 <span class="type">(단위 : 원)</span></h2>
+        <div class="btn_money">
+          <button id="100" value="100">100원</button>
+          <button id="500" value="500">500원</button>
+          <button id="1000" value="1000">1000원</button>
+          <button id="5000" value="5000">5000원</button>
+          <button id="10000" value="10000">10000원</button>
+          <button id="50000" value="50000">50000원</button>
+        </div>
+        <div class="show_amount">
+          <input id="moneyCount" class="show_input" type="text" value="0" readonly />
+          <span class="won">원</span>
+          <button type="button" class="btn_return">반환</button>
+        </div>
+      </div>
+      <div class="entrance">
+        <h2>투입 금액 <span class="type">(단위 : $)</span></h2>
+        <div class="btn_money">
+          <button id="1cent" value="0.01">$ 0.01</button>
+          <button id="5cent" value="0.05">$ 0.05</button>
+          <button id="10cent" value="0.10">$ 0.10</button>
+          <button id="25cent" value="0.25">$ 0.25</button>
+          <button id="50cent" value="0.50">$ 0.50</button>
+          <button id="1dollar" value="1">$ 1</button>
+          <button id="2dollar" value="2">$ 2</button>
+          <button id="5dollar" value="5">$ 5</button>
+          <button id="10dollar" value="10">$ 10</button>
+          <button id="20dollar" value="20">$ 20</button>
+          <button id="50dollar" value="50">$ 50</button>
+          <button id="100dollar" value="100">$ 100</button>
+        </div>
+        <div class="show_amount">
+          <input id="dollarCount" class="show_input" type="text" value="0" readonly />
+          <span class="dollar">$</span>
+          <button type="button" class="btn_return">반환</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="receive_part">
+      <div class="receive" id="receiveList">
+        <h2>받는 곳</h2>
+      </div>
+      <div class="return">
+        <div class="group-won">
+          <h2>반환된 금액 <span class="type"></span></h2>
+          <table id="table">
+            <colgroup>
+              <col width="50%" />
+              <col width="50%" />
+            </colgroup>
+            <thead>
+              <th scope="col">단위</th>
+              <th scope="col">수량</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="amount">
+            총 금액 : <span class="sum" id="returnTotal">0</span><span class="type" id="totalAmount"> 원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album01.png" alt="비틀즈 앨범" />
+          <div class="desc">
+            <div class="title">
+              [Abbey Road]
+            </div>
+            - 1969년 9월 26일 발매. (녹음: 1969년 2월~8월)<br />
+            - 발매 당시 UK 앨범 차트 11주 연속 1위, 총 17주 1위<br />
+            - 빌보드 앨범 차트 12주 연속 1위 기록<br />
+            - 롤링스톤지 선정 The Greatest Albums Of All Time 14위<br /><br />
+            1969년 9월, 비틀스의 모든 멤버가 함께 모여 작업한 마지막 앨범이 발매되었다.그 높은 인기와 끝없는 음악적 독창성에 있어 [Abbey Road]는 밴드의 최고작을 꼽을 때
+            [Sgt.Pepper Lonely Hearts Club Band]의 위치를 위협하는 앨범이다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album02.png" alt="Adoy 앨범" />
+          <div class="desc">
+            <div class="title">
+              'ADOY' – 젊음과 청춘의 잔상
+            </div>
+            '젊은 날엔 젊음을 모르고'라는 노랫말이 있다. 한국 대중 음악사 속 누구도 침범할 수 없는 독자적 영역을 구축한 싱어송라이터 '이상은'이 스물 넷에 만든 노래 "언젠가는"의 첫 가사다. 생의
+            절반도 살아보지 못하고 너무 젠체하는 게 아닌가 싶지만 젊음, 청춘이란 것이 무릇 그렇지 않던가. 축복과도 같은 눈부심에 감싸여 있을 때에는 미처 눈치채지 못하다가 그 빛과 온기가 모두
+            사라져버리고 난 후에야 비로소 '아, 지나갔구나' 미련하게 깨닫게 되는 것.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album03.png" alt="bts 앨범" />
+          <div class="desc">
+            <div class="title">
+              방탄소년단, 싱글 CD &lt;Butter&gt; 발매
+            </div>
+            글로벌 서머송 &lt;Butter&gt;와 심장을 뛰게 하는 &lt;Permission to Dance&gt; 수록
+            '21세기 팝 아이콘' 방탄소년단의 전 세계를 향한 메시지…'Listen to your Heart's Rhythm'
+            그룹 방탄소년단이 7월 9일 싱글 CD &lt;Butter&gt;를 발매했다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album04.png" alt="아이유 앨범" />
+          <div class="desc">
+            <div class="title">
+              ‘아이유(IU)’ Digital Single [strawberry moon]
+            </div>
+            포토샵으로 만든 것 같은 6월 밤하늘의 딸기 색깔 달보다, 사랑에 빠졌을 때 내 안에서 일어나는 일들이 더 믿기 힘든 판타지에 가깝다.
+            자주 오지 않더라도, 다시 오지 않더라도 누구나 한 번쯤 경험한 적 있을 그 신비한 순간을, 이 곡을 들으면서 떠올렸으면 좋겠다.
+            처음 스케치 할 때는 어쿠스틱 기타 기반의 심플한 이지 리스닝 트랙이었는데 이종훈 작곡가의 청량한 피아노 테마와 시원한 D bridge가 더해지며 피아노 선율 중심의 poprock 곡이 되었다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album05.png" alt="Honne 앨범" />
+          <div class="desc">
+            <div class="title">
+              진실된 마음을 노래하는 일렉트로니카 소울 듀오‘HONNE’의 두 번째 정규 앨범 [Love Me / Love Me Not] 발표!
+            </div>
+            진실된 가사와 세련된 사운드로 사랑 받는 영국의 신스팝 듀오 HONNE가 올해 초부터 예고한 두 번째 정규 앨범을 드디어 발표한다! 지난 3월부터 새로운 앨범에 포함될 곡을 매달 두 개씩
+            발표해왔던 그들이 마지막 두 곡을 추가로 공개함과 동시에, 그 대망의 정규 앨범을 팬들 앞에 선보인다. 해당 앨범의 수록 곡 중 최초로 공개되어 팬들의 많은 사랑을 받았던‘Day 1 ◑’부터,
+            HONNE의 많은 라이브 공연에 객원 보컬리스트로 참여해 주목을 받은‘Rebeka’가 피쳐링한‘Crying Over You ◐’까지, HONNE의 세련되면서도 따뜻한 감성을 느낄 수 있는 작품,
+            [Love Me / Love Me Not]!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content">
+          <h3>앨범 소개</h3>
+          <img src="img/album06.png" alt="bts 앨범" />
+          <div class="desc">
+            <div class="title">
+              글로벌 슈퍼스타 방탄소년단 [BTS WORLD OST] 발매!<br />
+              전 세계 주목받는 유망 아티스트들과 유닛곡 컬래버레이션!<br />
+              세계적인 프로듀서 및 엔지니어 참여! 최고의 완성도
+            </div>
+            방탄소년단 참여한 [BTS WORLD OST] 6월 28일 전 세계 발매!
+            그룹 방탄소년단을 주인공으로 한 모바일 게임 ‘BTS 월드’의 오리지널 사운드 트랙(OST)이 6월 28일 발매된다.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/jquery-latest.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/index.js"></script>
+
+  <script>
+    // swiper option
+    // slidesPerColumn: 1,
+  </script>
+</body>
+
+</html>

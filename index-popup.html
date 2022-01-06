@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자판기</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/swiper.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<style>
+  div[id^="modal0"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+  }
+
+  div[id^="modal0"] h2 {
+    margin: 0;
+  }
+
+  div[id^="modal0"] button {
+    display: inline-block;
+    width: 100px;
+    margin-left: calc(100% - 100px - 10px);
+  }
+
+  div[id^="modal0"] .modal_content {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px 10px;
+    background: #fff;
+    border: 2px solid #666;
+  }
+
+  div[id^="modal0"] .modal_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+</style>
+
+<body>
+
+  <div id="modal01">
+    <div class="modal_content" id="popContent">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> aaa</span>
+      <button type="button" id="modal_close_btn01">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal02">
+    <div class="modal_content" id="popContent">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> bbb</span>
+      <button type="button" id="modal_close_btn02">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal03">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> ccc</span>
+      <button type="button" id="modal_close_btn03">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal04">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> ddd</span>
+      <button type="button" id="modal_close_btn04">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal05">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> eee</span>
+      <button type="button" id="modal_close_btn05">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div id="modal06">
+    <div class="modal_content">
+      <img src="" id="ggg">
+      <span class="modal_x" id="fff"> fff</span>
+      <button type="button" id="modal_close_btn06">모달 창 닫기</button>
+    </div>
+    <div class="modal_layer"></div>
+  </div>
+
+  <div class="container">
+    <div class="head_part">
+      <h1>앨범 자판기</h1>
+    </div>
+    <div class="display_part">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg01" src="img/album01.png" alt="비틀즈 앨범" />
+            <div class="item" id="item01">
+              <span class="price">29900</span>원
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg02" src="img/album02.png" alt="adoy 앨범" />
+            <div class="item" id="item02">
+              <span class="price">65000</span>원
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg03" src="img/album03.png" alt="bts 앨범" />
+            <div class="item" id="item03">
+              <span class="price">87500</span>원
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg04" src="img/album04.png" alt="아이유 앨범" />
+            <div class="item" id="item04">
+              <span class="price">70300</span>원
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg05" src="img/album05.png" alt="Honne 앨범" />
+            <div class="item" id="item05">
+              <span class="price">42100</span>원
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img class="display_img" id="popimg06" src="img/album06.png" alt="bts 앨범" />
+            <div class="item" id="item06">
+              <span class="price">10900</span>원
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="entrance_part">
+      <div class="entrance">
+        <h2>투입 금액 <span class="type">(단위 : 원)</span></h2>
+        <div class="btn_money">
+          <button id="100" value="100">100원</button>
+          <button id="500" value="500">500원</button>
+          <button id="1000" value="1000">1000원</button>
+          <button id="5000" value="5000">5000원</button>
+          <button id="10000" value="10000">10000원</button>
+          <button id="50000" value="50000">50000원</button>
+        </div>
+        <div class="show_amount">
+          <input id="moneycount" class="show_input" type="text" value="0" readonly />
+          <span class="won">원</span>
+          <button type="button" class="btn_return">반환</button>
+        </div>
+      </div>
+      <div class="entrance">
+        <h2>투입 금액 <span class="type">(단위 : $)</span></h2>
+        <div class="btn_money">
+          <button id="1cent" value="0.01">$ 0.01</button>
+          <button id="5cent" value="0.05">$ 0.05</button>
+          <button id="10cent" value="0.10">$ 0.10</button>
+          <button id="25cent" value="0.25">$ 0.25</button>
+          <button id="50cent" value="0.50">$ 0.50</button>
+          <button id="1dollar" value="1">$ 1</button>
+          <button id="2dollar" value="2">$ 2</button>
+          <button id="5dollar" value="5">$ 5</button>
+          <button id="10dollar" value="10">$ 10</button>
+          <button id="20dollar" value="20">$ 20</button>
+          <button id="50dollar" value="50">$ 50</button>
+          <button id="100dollar" value="100">$ 100</button>
+        </div>
+        <div class="show_amount">
+          <input id="dollarmoneycount" class="show_input" type="text" value="0" readonly />
+          <span class="dollar">Dollar</span>
+          <button type="button" class="btn_return">반환</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="receive_part">
+      <div class="receive" id="receive_list">
+        <h2>받는 곳</h2>
+      </div>
+      <div class="return">
+        <div class="group-won">
+          <h2>반환된 금액 <span class="type"></span></h2>
+          <table id="retValuebody">
+            <colgroup>
+              <col width="50%" />
+              <col width="50%" />
+            </colgroup>
+            <thead>
+              <th scope="col">단위</th>
+              <th scope="col">수량</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="amount">
+            총 금액 : <span class="sum" id="returnTotal">0</span><span class="type" id="moneyname"> 원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="popup" id="pop01" style="display: none;">
+      안녕하세요.......1
+    </div>
+
+    <div class="popup" id="pop02" style="display: none;">
+      안녕하세요.......2
+    </div>
+
+    <div class="popup" id="pop03" style="display: none;">
+      안녕하세요.......3
+    </div>
+
+
+
+
+  </div>
+
+  <script src="js/jquery-latest.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/index-popup.js"></script>
+  <script>
+    // const swiper = new Swiper('.swiper-container', {
+    //   slidesPerView: 3,
+    //   slidesPerColumn: 1,
+    //   spaceBetween: 30,
+    //   pagination: {
+    //     el: '.swiper-pagination',
+    //     clickable: true,
+    //   },
+    // });
+
+
+
+    let ww = $(window).width();
+    var mySwiper = undefined;
+
+    function initSwiper() {
+
+      if (ww < 680 && mySwiper == undefined) {
+        mySwiper = new Swiper(".swiper-container", {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      } else if (ww >= 680 && mySwiper != undefined) {
+        mySwiper.destroy();
+        mySwiper = undefined;
+      }
+    }
+
+    initSwiper();
+
+    $(window).on('resize', function () {
+      ww = $(window).width();
+      initSwiper();
+    });
+  </script>
+</body>
+
+</html>
